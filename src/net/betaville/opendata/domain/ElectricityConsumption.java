@@ -35,10 +35,12 @@ package net.betaville.opendata.domain;
 public class ElectricityConsumption {
 
 	private String zip = null;
-	private String commercial = null;
-	private String industrial = null;
-	private String institutional = null;
-	private String residential = null;
+	private String lat = null;
+	private String lng = null;
+	private float commercial = 0.0f;
+	private float industrial = 0.0f;
+	private float institutional = 0.0f;
+	private float residential = 0.0f;
 
 	/**
 	 * DOCME
@@ -60,10 +62,46 @@ public class ElectricityConsumption {
 
 	/**
 	 * DOCME
+	 *
+	 * @return
+	 */
+	public String getLat() {
+		return this.lat;
+	}
+
+	/**
+	 * DOCME
+	 *
+	 * @param lat
+	 */
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	/**
+	 * DOCME
+	 *
+	 * @return
+	 */
+	public String getLng() {
+		return this.lng;
+	}
+
+	/**
+	 * DOCME
+	 *
+	 * @param lng
+	 */
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+
+	/**
+	 * DOCME
 	 * 
 	 * @return
 	 */
-	public String getCommercial() {
+	public float getCommercial() {
 		return this.commercial;
 	}
 
@@ -72,7 +110,7 @@ public class ElectricityConsumption {
 	 *
 	 * @param commercial
 	 */
-	public void setCommercial(String commercial) {
+	public void setCommercial(float commercial) {
 		this.commercial = commercial;
 	}
 
@@ -81,7 +119,7 @@ public class ElectricityConsumption {
 	 *
 	 * @return
 	 */
-	public String getIndustrial() {
+	public float getIndustrial() {
 		return this.industrial;
 	}
 
@@ -90,7 +128,7 @@ public class ElectricityConsumption {
 	 *
 	 * @param industrial
 	 */
-	public void setIndustrial(String industrial) {
+	public void setIndustrial(float industrial) {
 		this.industrial = industrial;
 	}
 	
@@ -99,7 +137,7 @@ public class ElectricityConsumption {
 	 *
 	 * @return
 	 */
-	public String getInstitutional() {
+	public float getInstitutional() {
 		return this.institutional;
 	}
 	
@@ -108,7 +146,7 @@ public class ElectricityConsumption {
 	 *
 	 * @param institutional
 	 */
-	public void setInstitutional(String institutional) {
+	public void setInstitutional(float institutional) {
 		this.institutional = institutional;
 	}
 	
@@ -117,7 +155,7 @@ public class ElectricityConsumption {
 	 *
 	 * @return
 	 */
-	public String getResidential() {
+	public float getResidential() {
 		return this.residential;
 	}
 	
@@ -126,7 +164,7 @@ public class ElectricityConsumption {
 	 *
 	 * @param residential
 	 */
-	public void setResidential(String residential) {
+	public void setResidential(float residential) {
 		this.residential = residential;
 	}
 	
