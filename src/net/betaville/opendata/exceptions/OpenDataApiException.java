@@ -27,8 +27,8 @@ package net.betaville.opendata.exceptions;
 
 /**
  * DOCME
- *
- * @author akoenig
+ * 
+ * @author André König (andre.koeniig@gmail.com)
  *
  */
 public class OpenDataApiException extends Exception {

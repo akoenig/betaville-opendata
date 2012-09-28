@@ -32,90 +32,13 @@ package net.betaville.opendata.domain;
  * @author André König (andre.koeniig@gmail.com)
  *
  */
-public class OilBoilerFacility {
+public class ElectricityConsumption {
 
-	private String id = null;
-	private String address = null;
-	private String city = null;
-	private String state = null;
 	private String zip = null;
-	private String lat = null;
-	private String lng = null;
-	private boolean numberSixOil = false;
-	private boolean multiFuel = false;
-	private String boilerCapacity = null;
-
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public String getId() {
-		return this.id;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param id
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public String getAddress() {
-		return this.address;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param address
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public String getCity() {
-		return this.city;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param city
-	 */
-	public void setCity(String city) {
-		this.city = city;
-	}
-	
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public String getState() {
-		return this.state;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param state
-	 */
-	public void setState(String state) {
-		this.state = state;
-	}
+	private String commercial = null;
+	private String industrial = null;
+	private String institutional = null;
+	private String residential = null;
 
 	/**
 	 * DOCME
@@ -137,38 +60,20 @@ public class OilBoilerFacility {
 
 	/**
 	 * DOCME
-	 *
+	 * 
 	 * @return
 	 */
-	public String getLat() {
-		return this.lat;
+	public String getCommercial() {
+		return this.commercial;
 	}
 
 	/**
 	 * DOCME
 	 *
-	 * @param lat
+	 * @param commercial
 	 */
-	public void setLat(String lat) {
-		this.lat = lat;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public String getLng() {
-		return this.lng;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param lng
-	 */
-	public void setLng(String lng) {
-		this.lng = lng;
+	public void setCommercial(String commercial) {
+		this.commercial = commercial;
 	}
 
 	/**
@@ -176,65 +81,64 @@ public class OilBoilerFacility {
 	 *
 	 * @return
 	 */
-	public boolean isNumberSixOil() {
-		return this.numberSixOil;
+	public String getIndustrial() {
+		return this.industrial;
 	}
 
 	/**
 	 * DOCME
 	 *
-	 * @param numberSixOil
+	 * @param industrial
 	 */
-	public void setNumberSixOil(boolean numberSixOil) {
-		this.numberSixOil = numberSixOil;
+	public void setIndustrial(String industrial) {
+		this.industrial = industrial;
 	}
-
-	/**
-	 * DOCME
-	 *
-	 * @return
-	 */
-	public boolean isMultiFuel() {
-		return this.multiFuel;
-	}
-
-	/**
-	 * DOCME
-	 *
-	 * @param multiFuel
-	 */
-	public void setMultiFuel(boolean multiFuel) {
-		this.multiFuel = multiFuel;
-	}
-
+	
 	/**
 	 * DOCME
 	 *
 	 * @return
 	 */
-	public String getBoilerCapacity() {
-		return this.boilerCapacity;
+	public String getInstitutional() {
+		return this.institutional;
 	}
-
+	
 	/**
 	 * DOCME
 	 *
-	 * @param boilerCapacity
+	 * @param institutional
 	 */
-	public void setBoilerCapacity(String boilerCapacity) {
-		this.boilerCapacity = boilerCapacity;
+	public void setInstitutional(String institutional) {
+		this.institutional = institutional;
 	}
-
+	
+	/**
+	 * DOCME
+	 *
+	 * @return
+	 */
+	public String getResidential() {
+		return this.residential;
+	}
+	
+	/**
+	 * DOCME
+	 *
+	 * @param residential
+	 */
+	public void setResidential(String residential) {
+		this.residential = residential;
+	}
+	
 	/**
 	 * DOCME
 	 *
 	 */
 	@Override
 	public String toString() {
-		return "OilBoilerFacility [id=" + id + ", address=" + address
-				+ ", city=" + city + ", state=" + state + ", zip=" + zip
-				+ ", lat=" + lat + ", lng=" + lng + ", numberSixOil="
-				+ numberSixOil + ", multiFuel=" + multiFuel
-				+ ", boilerCapacity=" + boilerCapacity + "]";
+		return "ElectricityConsumption [zip=" + zip + ", commercial="
+				+ commercial + ", industrial=" + industrial
+				+ ", institutional=" + institutional + ", residential="
+				+ residential + "]";
 	}
 }
