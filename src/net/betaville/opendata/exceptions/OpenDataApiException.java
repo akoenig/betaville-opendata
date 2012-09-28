@@ -23,18 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
-package net.betaville.opendata.feeds;
-
-import java.io.BufferedReader;
-import java.lang.reflect.Type;
-import java.util.Vector;
-
-import net.betaville.opendata.domain.OilBoilerFacility;
-import net.betaville.opendata.exceptions.OpenDataApiException;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+package net.betaville.opendata.exceptions;
 
 /**
  * DOCME
@@ -42,48 +31,16 @@ import com.google.gson.reflect.TypeToken;
  * @author akoenig
  *
  */
-public class OilBoilerFeed extends AbstractFeed {
+public class OpenDataApiException extends Exception {
 
-	// DOCME
-	private static final String OIL_BOILER_API_ENDPOINT = "http://nycopendata.jit.su/feed/51?betaville=true";
-	
-	// DOCME
-	private static volatile OilBoilerFeed instance = null;
-	
-	// DOCME
-	private OilBoilerFeed() {}
-	
-	/**
-	 * DOCME
-	 * 
-	 * @return
-	 */
-	public static OilBoilerFeed getInstance() {
-		if (instance == null) {
-			synchronized (OilBoilerFeed .class) {
-				if (instance == null) {
-					instance = new OilBoilerFeed();
-				}
-			}
-		}
-		
-		return instance;
-	}
-	
+	private static final long serialVersionUID = 1024677212077660020L;
+
 	/**
 	 * DOCME
 	 *
-	 * @return
-	 * @throws OpenDataApiException 
+	 * @param message
 	 */
-	public Vector<OilBoilerFacility> findAll() throws OpenDataApiException {
-		BufferedReader response = this.doGet(OIL_BOILER_API_ENDPOINT);
-
-		Gson gson = new Gson();
-
-		Type collectionType = new TypeToken<Vector<OilBoilerFacility>>(){}.getType();
-		Vector<OilBoilerFacility> facilities = gson.fromJson(response, collectionType);
-
-		return facilities;
+	public OpenDataApiException(String message) {
+		super(message);
 	}
 }

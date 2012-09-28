@@ -26,10 +26,33 @@
 
 package net.betaville.opendata;
 
+import java.util.Vector;
+
+import net.betaville.opendata.domain.OilBoilerFacility;
+import net.betaville.opendata.exceptions.OpenDataApiException;
+import net.betaville.opendata.feeds.OilBoilerFeed;
+
+/**
+ * DOCME
+ *
+ * @author akoenig
+ *
+ */
 public class App {
 
 	public static void main(String args[]) {
-		
+		try {
+			Vector<OilBoilerFacility> facilities = OilBoilerFeed.getInstance().findAll();
+			
+			int i = 0;
+			for (OilBoilerFacility facility : facilities) {
+				i++;
+				System.out.println(facility.toString());
+			}
+			System.out.println("COUNT " + i);
+		} catch (OpenDataApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
 }

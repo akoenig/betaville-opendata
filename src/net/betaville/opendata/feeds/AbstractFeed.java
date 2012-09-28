@@ -27,14 +27,14 @@
 package net.betaville.opendata.feeds;
 
 import java.io.BufferedReader;
-import java.lang.reflect.Type;
-import java.util.Vector;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import net.betaville.opendata.domain.OilBoilerFacility;
-import net.betaville.opendata.exceptions.OpenDataApiException;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * DOCME
@@ -42,48 +42,38 @@ import com.google.gson.reflect.TypeToken;
  * @author akoenig
  *
  */
-public class OilBoilerFeed extends AbstractFeed {
+public abstract class AbstractFeed {
 
-	// DOCME
-	private static final String OIL_BOILER_API_ENDPOINT = "http://nycopendata.jit.su/feed/51?betaville=true";
-	
-	// DOCME
-	private static volatile OilBoilerFeed instance = null;
-	
-	// DOCME
-	private OilBoilerFeed() {}
-	
-	/**
-	 * DOCME
-	 * 
-	 * @return
-	 */
-	public static OilBoilerFeed getInstance() {
-		if (instance == null) {
-			synchronized (OilBoilerFeed .class) {
-				if (instance == null) {
-					instance = new OilBoilerFeed();
-				}
-			}
-		}
-		
-		return instance;
-	}
+	protected enum PARSE_TYPES {
+		CSV
+	};
 	
 	/**
 	 * DOCME
 	 *
+	 * @param url
 	 * @return
-	 * @throws OpenDataApiException 
 	 */
-	public Vector<OilBoilerFacility> findAll() throws OpenDataApiException {
-		BufferedReader response = this.doGet(OIL_BOILER_API_ENDPOINT);
+	protected BufferedReader doGet(String url) {
+		DefaultHttpClient client = new DefaultHttpClient();
+		HttpGet getRequest = new HttpGet(url);
 
-		Gson gson = new Gson();
+		try {
+			HttpResponse getResponse = client.execute(getRequest);
 
-		Type collectionType = new TypeToken<Vector<OilBoilerFacility>>(){}.getType();
-		Vector<OilBoilerFacility> facilities = gson.fromJson(response, collectionType);
-
-		return facilities;
+			// final int statusCode = getResponse.getStatusLine().getStatusCode();
+			// TODO: Implement some exception handling.
+			
+			HttpEntity getResponseEntity = getResponse.getEntity();
+			
+			return new BufferedReader(new InputStreamReader(getResponseEntity.getContent()));
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 }
