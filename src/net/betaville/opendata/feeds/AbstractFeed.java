@@ -39,7 +39,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 /**
  * DOCME
  * 
- * @author André König (andre.koeniig@gmail.com)
+ * @author Andre Koenig (andre.koenig@gmail.com)
  *
  */
 public abstract class AbstractFeed {

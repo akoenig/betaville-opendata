@@ -37,7 +37,7 @@ import net.betaville.opendata.feeds.OilBoilerFeed;
 /**
  * DOCME
  * 
- * @author André König (andre.koeniig@gmail.com)
+ * @author Andre Koenig (andre.koenig@gmail.com)
  *
  */
 public class App {

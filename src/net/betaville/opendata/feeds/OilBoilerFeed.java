@@ -39,7 +39,7 @@ import com.google.gson.reflect.TypeToken;
 /**
  * DOCME
  * 
- * @author André König (andre.koeniig@gmail.com)
+ * @author Andre Koenig (andre.koenig@gmail.com)
  *
  */
 public class OilBoilerFeed extends AbstractFeed {
