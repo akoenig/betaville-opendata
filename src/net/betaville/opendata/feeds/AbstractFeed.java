@@ -44,10 +44,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
  */
 public abstract class AbstractFeed {
 
-	protected enum PARSE_TYPES {
-		CSV
-	};
-	
 	/**
 	 * DOCME
 	 *
