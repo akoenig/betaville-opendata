@@ -11,4 +11,4 @@ The component communicates with the API wrapper [nyc-opendata](https://github.co
 
 ## Author
 
-Copyright (c) 2012, [André König](http://lochkartenstanzer.de) ([Google+](http://profile.lochkartenstanzer.de)) (andre.koenig -[at]- gmail [*dot*] com)
+Copyright (c) 2013, [André König](http://iam.andrekoenig.info)
